@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    block head
+      meta(charset="UTF-8")
+      meta(name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
+      link(rel="stylesheet" href="/css/style.css")
+      link(rel="icon" type="image/x-icon" href="imgs/logo.png")
+      link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+      title Organix | #{title}
+
+  body
+  .col-md-12.container-fluid.admin
+    .sidebar
+      .row.admin-info
+        img#admin-photo(src="/imgs/admin.jpg", alt="adminPhoto")
+        h1 Admin
+      .links
+        a(href="/")
+          i.fa.fa-fw.fa-home
+          |  Home
+        a(href="/shop")
+          img(src="/imgs/product.png", alt="")
+          |  Products
+        //- a(href="addProduct.html")
+        //-   i.fas.fa-plus
+        //-   |  add new product
+        a#logout
+          i.fas.fa-arrow-right
+          |  Logout
+    .main
+      .row
+        .bars
+          h1 Sales
+          p Total sales today
+          h5 $1000
+          svg.progress-circle(viewBox="0 0 100 100", style="width: 233px; height: 235px; position: absolute; top: 154px; left: 385px;")
+            circle(cx="50", cy="50", r="45", fill="none", stroke="#ffff", stroke-width="10")
+            g(transform="rotate(270.64 50 50)")
+              circle(cx="50", cy="50", r="45", fill="none", stroke="#3C7D5A", stroke-width="10", stroke-dasharray="258", stroke-dashoffset="65")
+            text(x="50", y="50", text-anchor="middle", dominant-baseline="central", font-size="20", fill="#000000") 65%
+        .bar
+          h1 Orders
+          p Total orders today
+          h5 3000
+      .row
+        .bars
+          h1 Revenue
+          p Total revenue today
+          h5 $600
+          svg.progress-circle(viewBox="0 0 100 100", style="width: 233px; height: 235px; position: absolute; top: 154px; left: 385px;")
+            circle(cx="50", cy="50", r="45", fill="none", stroke="#ffff", stroke-width="10")
+            g(transform="rotate(255.64 50 50)")
+              circle(cx="50", cy="50", r="45", fill="none", stroke="#3C4E7D", stroke-width="10", stroke-dasharray="188", stroke-dashoffset="48")
+            text(x="50", y="50", text-anchor="middle", dominant-baseline="central", font-size="20", fill="#000000") 48%
+        .bar
+          h1 Visits
+          p Total visits today
+          h5 500

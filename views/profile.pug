@@ -1,0 +1,130 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.css")
+    link(rel="icon", type="image/x-icon", href="imgs/logo.png")
+    link(rel="stylesheet", href="css/all.min.css")
+    link(rel="stylesheet", href="css/materialize.min.css")
+    title Organix | #{title}
+  body
+    .container-fluid.profile
+      .profil
+        .row
+          .col.s12.m4.l3
+            .sidebar-profile
+              .links
+                .link.setting
+                  a(href="/", style="text-decoration: none;")
+                    i.fa-solid.fa-chevron-left
+                    |  Back
+                .link
+                  a(href="#", onclick="generaldetails()", style="text-decoration: none;")
+                    i.fa-solid.fa-user
+                    |  General details
+                .link
+                  a(href="#", onclick="editprofile()", style="text-decoration: none;")
+                    i.fa-solid.fa-pen
+                    |  Edit Profile
+                .link
+                  a(href="#", onclick="updatePassword()", style="text-decoration: none;")
+                    i.fas.fa-lock
+                    |  Update Password
+                .link
+                  .row
+                    .col.s8.icon
+                      i.fa-solid.fa-globe
+                      |  Language
+                    .col.s4.language
+                      |  English
+              .links.logout
+                .link
+                  a(href="#", id="logoutLink", style="text-decoration: none;")
+                    i.fa-solid.fa-right-to-bracket
+                    |  Logout
+          .col.s12.m8.l9.edit-profile.hide
+            form.profile-form
+              .enable-edit
+                i.fa-solid.fa-pen
+                |  Edit Profile
+              .row.form-content
+                .col.s12.input-field
+                  label(for="name") Name
+                  input#name(name="name" type="text" class="name" value=user.name)
+                .col.s12.input-field
+                  label(for="role") Role
+                  input#role(name="role" type="text" class="role" value=user.role readonly)
+                .col.s12.input-field
+                  label(for="email") Email
+                  input#email(name="email" type="email" class="email" value=user.email)
+                .file-field.input-field.col.s12.mt-3
+                  .btn(style="background-color: #3c7d5a;")
+                    span Upload image
+                    input#photo(type="file" accept="image/*")
+                  .file-path-wrapper
+                    input.file-path.validate(type="text")
+
+                button.col.s12.m4.btn-save.btn.waves-effect.waves-light(type="submit")
+                  |  Save Changes
+          .col.s12.m8.l9.general-details
+            .user-detail
+              .profile-image-container
+                .user-image
+                  #imageContainer
+                    img(src=`imgs/${user.photo}` alt="Profile Image")
+                button.btn-upload.btn.waves-effect.waves-light
+                  |  Update image
+              .row.mb-3
+                label.col.s4(for="name") Name:
+                p.col.s8.name#name=user.name
+              .row.mb-3
+                label.col.s4(for="email") Email:
+                p.col.s8.email#email=user.email
+              .row.mb-3
+                label.col.s4(for="address") Role:
+                p.col.s8.role#role=user.role
+          .col.s12.m8.l9.update-password.hide
+            form.password-form
+              .enable-edit
+                i.fas.fa-lock
+                |  Update Password
+              .row.form-content
+                .col.s12.input-field
+                  label(for="currentPassword") Current Password
+                  input#currentPassword(name="currentPassword" type="password" class="currentPassword" required)
+                .col.s12.input-field
+                  label(for="newPassword") New Password
+                  input#newPassword(name="newPassword" type="password" class="newPassword" required)
+                .col.s12.input-field
+                  label(for="confirmPassword") Confirm Password
+                  input#confirmPassword(name="confirmPassword" type="password" class="confirmPassword" required)
+                button.col.s12.m4.btn-save.btn.waves-effect.waves-light(type="submit")
+                  |  Save Changes
+
+    script.
+      function goBack() {
+        window.history.back();
+      }
+
+      function editprofile() {
+        document.querySelector('.edit-profile').classList.remove('hide');
+        document.querySelector('.general-details').classList.add('hide');
+        document.querySelector('.update-password').classList.add('hide');
+      }
+
+      function generaldetails() {
+        document.querySelector('.edit-profile').classList.add('hide');
+        document.querySelector('.general-details').classList.remove('hide');
+        document.querySelector('.update-password').classList.add('hide');
+      }
+
+      function updatePassword() {
+        document.querySelector('.edit-profile').classList.add('hide');
+        document.querySelector('.general-details').classList.add('hide');
+        document.querySelector('.update-password').classList.remove('hide');
+      }
+
+    script(src="/js/all.min.js")
+    script(src="/js/materialize.min.js")
+    script(src="/js/bundle.js")

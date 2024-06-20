@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="imgs/logo.png" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Organix</title>
+    <style>
+      * {
+        font-family: "Inter";
+        padding: 0;
+        margin: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+
+  <body class="signup-page">
+    <div class="container register">
+      <div class="row">
+        <div
+          class="col s12 m6 d-flex justify-content-center align-items-center img-container"
+        >
+          <img src="imgs/login.png" alt="Login Image" class="responsive-img" />
+        </div>
+        <div
+          class="col s12 m6 d-flex justify-content-center align-items-center form-container"
+        >
+          <div>
+            <form id="Sign-up-form ">
+              <h1 class="font-weight-bold">Sign up</h1>
+              <div class="inputField">
+                <div class="input-field">
+                  <i class="fas fa-user prefix"></i>
+                  <input
+                    type="text"
+                    id="username"
+                    class="validate"
+                    placeholder="User name"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <i class="fas fa-envelope prefix"></i>
+                  <input
+                    type="email"
+                    id="email"
+                    class="validate"
+                    placeholder="Email address"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <i class="fas fa-lock prefix"></i>
+                  <input
+                    type="password"
+                    id="password"
+                    class="validate"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <i class="fas fa-lock prefix"></i>
+                  <input
+                    type="password"
+                    id="confirmpassword"
+                    class="validate"
+                    placeholder="Confirm password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="center-align">
+                <button type="submit" class="btn btn-signup">Sign up</button>
+              </div>
+
+              <div class="form-check">
+                <label>
+                  <input type="checkbox" id="agreeTerms" />
+                  <span
+                    >I agree to the terms of services and privacy policy</span
+                  >
+                </label>
+              </div>
+              <p class="switch-form">
+                Already have an account!
+                <a href="login.html" id="switch-to-login">Login</a>
+              </p>
+              <div class="footer">
+                <a href="#"
+                  ><img
+                    src="imgs/google.png"
+                    alt="google-icon"
+                    class="fa-google"
+                /></a>
+                <a href="#"
+                  ><img src="imgs/twitter (1).png" alt="twitter-icon"
+                /></a>
+                <a href="#"
+                  ><img src="imgs/facebook.png" alt="facebook-icon"
+                /></a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/materialize.min.js"></script>
+    <script src="js/all.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="imgs/logo.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Organix</title>
+  </head>
+
+  <body>
+    <nav class="navbar-fixed">
+      <div class="nav-wrapper white">
+        <a href="home.html" class="brand-logo">
+          <img src="imgs/logo.png" alt="Logo" />
+          <span>Organix</span>
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="material-icons black-text">menu</i></a
+        >
+
+        <ul id="nav-mobile" class="col right hide-on-med-and-down">
+          <li>
+            <form class="search">
+              <i class="fas fa-search prefix"></i>
+              <input id="search" type="text" placeholder="Search" />
+            </form>
+          </li>
+          <li><a href="home.html" id="homeLink">Home</a></li>
+          <li><a href="shop.html" id="shopLink">Shop</a></li>
+          <li><a href="cart.html" id="cartLink">Cart</a></li>
+          <li><a href="#logout" id="logoutLink">Logout</a></li>
+          <li>
+            <a href="profile.html" id="profileLink"
+              ><i class="fas fa-user prefix"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="#logout">Logout</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li>
+        <form class="search" style="width: 100%;">
+          <div class="input-field">
+            <i class="fas fa-search prefix"></i>
+            <input type="search" />
+            <div class="btn" style="width: 100%;">
+              <span>Search</span>
+            </div>
+          </div>
+        </form>
+      </li>
+    </ul>
+
+    <div class="section details">
+      <div class="row">
+        <div class="col s12 m7">
+          <img
+            src="imgs/banana.jpg"
+            alt="Product Image"
+            id="productImage"
+            class="responsive-img"
+          />
+        </div>
+        <div class="col s12 m5 deta">
+          <h2 id="productName" class="productName">Banana</h2>
+          <p id="productQuantity" class="productQuantity">Quantity:</p>
+          <p id="productPrice" class="productPrice">Price:</p>
+          <button class="btn btn-addToCart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 xl3">
+            <h5 class="black-text">Connect With Us</h5>
+          </div>
+          <div class="col s12 xl3">
+            <i class="fas fa-envelope" style="color: #3C7D5A;"></i> EMAIL
+            SUPPORT <br />
+            youma9104@gmail.com
+          </div>
+          <div class="col s12  xl3">
+            <i class="fas fa-phone" style="color: #3C7D5A;"></i> PHONE SUPPORT
+            <br />
+            16258
+          </div>
+          <div class="col s12 xl3">
+            <div class="icons">
+              <a href="#"><img src="imgs/google.png" alt="google-icon"/></a>
+              <a href="#"><img src="imgs/facebook.png" alt="facebook-icon"/></a>
+              <a href="#"
+                ><img src="imgs/twitter (1).png" alt="twitter-icon"
+              /></a>
+              <a href="#"
+                ><img src="imgs/instagram.png" alt="instagram-icon"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/all.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+      });
+    </script>
+  </body>
+</html>

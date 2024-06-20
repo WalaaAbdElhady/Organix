@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" type="image/x-icon" href="imgs/logo.png" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min .css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Organix</title>
+  </head>
+
+  <body class="home-page">
+    <nav class="navbar-fixed">
+      <div class="nav-wrapper white">
+        <a href="home.html" class="brand-logo">
+          <img src="imgs/logo.png" alt="Logo" />
+          <span>Organix</span>
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="material-icons black-text">menu</i></a
+        >
+
+        <ul id="nav-mobile" class="col right hide-on-med-and-down">
+          <li><a href="home.html" id="homeLink">Home</a></li>
+          <li><a href="shop.html" id="shopLink">Shop</a></li>
+          <li><a href="cart.html" id="cartLink">Cart</a></li>
+          <li><a href="#logout" id="logoutLink">Logout</a></li>
+          <li>
+            <a href="profile.html" id="profileLink"
+              ><i class="fas fa-user prefix"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="#logout">Logout</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+
+    <div class="container main-home">
+      <div class="col s12 m6">
+        <div class="info">
+          <h4>About Us</h4>
+          <p>
+            An organic farm with a big mission behind. <br />Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. <br />
+            Quam pellentesque scelerisque interdum viverra justo, laoreet
+            pellentesque.
+          </p>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="feedback">
+          <div class="row feedback-item">
+            <img src="imgs/Group.png" />
+            <span>100% organic products</span>
+          </div>
+          <div class="row feedback-item">
+            <img src="imgs/Group.png" />
+            <span>Cruelty free</span>
+          </div>
+          <div class="row feedback-item">
+            <img src="imgs/Group.png" />
+            <span>Support local community</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container main-home">
+      <div class="row">
+        <div class="s12 m6">
+          <div class="content">
+            <h5 class="center-align">Our Shop</h5>
+            <pre>
+High quality organic products
+                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Eleifend turpis lacus ornare quam non. Elemental tells.
+                </pre
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="home-footer">
+      <div class="container">
+        <div class="footer-img">
+          <a href="#"><img src="imgs/tomatoH (1).png" alt="tomato"/></a>
+          <a href="#"><img src="imgs/potatoH .png" alt="potato"/></a>
+          <a href="#"><img src="imgs/cucumberH .png" alt="cucumber"/></a>
+          <a href="#"><img src="imgs/carrotH (2).png" alt="carrot"/></a>
+          <a href="#"><img src="imgs/greenpeasH .png" alt="Greenpeas"/></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/materialize.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+      });
+    </script>
+  </body>
+</html>

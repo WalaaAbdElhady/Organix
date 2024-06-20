@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="imgs/logo.png">
+    <title>Organix</title>
+</head>
+
+<body style="background-color: #e1dede;">
+    <div class="container forms">
+        <form id="add-form" class="p-4">
+            <div class="col-12 text-left">
+                <a href="#" onclick="goBack()" class="goBack"><i class="fas fa-chevron-left"></i></a>
+            </div>
+            <div class="form-row">
+                <div class="input-field col s12 mt-3">
+                    <input type="text" id="name" class="validate">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s12 mt-3">
+                    <input type="date" id="date" class="validate">
+                    <label for="date">Date</label>
+                </div>
+                <div class="input-field col s12 mt-3">
+                    <input type="text" id="type" class="validate">
+                    <label for="type">Type</label>
+                </div>
+                <div class="input-field col s12 mt-3">
+                    <input type="text" id="price" class="validate">
+                    <label for="price">Price</label>
+                </div>
+                <div class="input-field col s12 mt-3">
+                    <input type="number" id="quantity" class="validate">
+                    <label for="quantity">Quantity</label>
+                </div>
+                <div class="file-field input-field col s12 mt-3">
+                    <div class="btn">
+                        <span>Upload image</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-add mt-5">Add</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <script src="js/all.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+</body>
+
+</html>

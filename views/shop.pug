@@ -1,0 +1,23 @@
+extends base
+
+block content
+    .main-shop
+        div
+            img.main-img(src="imgs/Rectangle 6.png", alt="main-img")
+        .row.product-card
+            each product in products
+                .col.s12.m6.l4.xl3
+                    .card.product-card
+                        if user.role=='user'
+                            .card-image
+                                a(href=`/addCart/${product._id}`)
+                                    img.responsive-img(src=`imgs/${product.photo}`, alt=`${product.name}`)
+                        else 
+                            .card-image
+                                a(href='#')
+                                    img.responsive-img(src=`imgs/${product.photo}`, alt=`${product.name}`)
+                        .card-content
+                            span.card-title= product.name
+                            p
+                            | Quantity: #{product.quantity} Kg <br />
+                            | Price: #{product.price} EGP

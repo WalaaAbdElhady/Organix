@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="imgs/logo.png" />
+    <link rel="stylesheet" href="css/all.min .css" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <title>Organix</title>
+  </head>
+
+  <body>
+    <div class="container-fluid profile">
+      <div class="profil">
+        <div class="row">
+          <div class="col s12 m4 l3">
+            <div class="sidebar-profile">
+              <div class="links">
+                <div class="link setting">
+                  <a href="#" onclick="goBack()" style="text-decoration: none;">
+                    <i class="fa-solid fa-chevron-left"></i> Settings
+                  </a>
+                </div>
+                <div class="link">
+                  <a
+                    href="#"
+                    onclick="generaldetails()"
+                    style="text-decoration: none;"
+                  >
+                    <i class="fa-solid fa-user"></i> General details
+                  </a>
+                </div>
+                <div class="link">
+                  <a
+                    href="#"
+                    onclick="editprofile()"
+                    style="text-decoration: none;"
+                  >
+                    <i class="fa-solid fa-pen"></i> Edit Profile
+                  </a>
+                </div>
+                <div class="link">
+                  <div class="row">
+                    <div class="col s8 icon">
+                      <i class="fas fa-lock fa-lock"></i> Update Password
+                    </div>
+                  </div>
+                </div>
+
+                <div class="link">
+                  <div class="row">
+                    <div class="col s8 icon">
+                      <i class="fa-solid fa-globe"></i> Language
+                    </div>
+                    <div class="col s4 language">
+                      English
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="links logout">
+                <div class="link">
+                  <a href="#" style="text-decoration: none;">
+                    <i class="fa-solid fa-right-to-bracket"></i> Logout
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m8 l9 edit-profile hide">
+            <form class="profile-form">
+              <div class="enable-edit">
+                <i class="fa-solid fa-pen"></i> Edit Profile
+              </div>
+              <div class="row form-content">
+                <div class="col s12 input-field">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" class="name" />
+                </div>
+                <div class="col s12 input-field">
+                  <label for="role">Role</label>
+                  <input type="text" id="role" name="role" class="role" />
+                </div>
+                <div class="col s12 input-field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" class="email" />
+                </div>
+
+                <button
+                  type="submit"
+                  class="col s12 m4 btn-save btn waves-effect waves-light"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="col s12 m8 l9 general-details">
+            <div class="user-detail">
+              <div class="profile-image-container">
+                <div class="user-image">
+                  <div id="imageContainer">
+                    <img src="imgs/admin.jpg" alt="Profile Image" />
+                  </div>
+                </div>
+                <button class="btn-upload btn waves-effect waves-light">
+                  Update image
+                </button>
+              </div>
+              <div class="row mb-3">
+                <label for="name" class="col s4">Name:</label>
+                <p class="col s8 name" id="name">Walaa</p>
+              </div>
+              <div class="row mb-3">
+                <label for="email" class="col s4">Email:</label>
+                <p class="col s8 email" id="email">walaa@gmail.com</p>
+              </div>
+              <div class="row mb-3">
+                <label for="address" class="col s4">Role:</label>
+                <p class="col s8 address" id="address">Farmer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+
+      function editprofile() {
+        document.querySelector('.edit-profile').classList.remove('hide');
+        document.querySelector('.general-details').classList.add('hide');
+      }
+
+      function generaldetails() {
+        document.querySelector('.edit-profile').classList.add('hide');
+        document.querySelector('.general-details').classList.remove('hide');
+      }
+
+      function handleFileInputChange(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+
+          reader.onload = function(e) {
+            const imageDataUrl = e.target.result;
+            const imageElement = document.createElement('img');
+            imageElement.src = imageDataUrl;
+            imageElement.style.width = '100%';
+            imageElement.style.height = '100%';
+            imageElement.style.objectFit = 'cover';
+            document.getElementById('imageContainer').innerHTML = '';
+            document.getElementById('imageContainer').appendChild(imageElement);
+            document.querySelector('.file-label').style.display = 'none';
+            document.querySelector('.input-group-form').style.border = 'none';
+          };
+        }
+      }
+
+      document
+        .getElementById('fileInput')
+        .addEventListener('change', handleFileInputChange);
+    </script>
+
+    <script src="js/all.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+  </body>
+</html>

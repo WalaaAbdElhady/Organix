@@ -1,0 +1,22 @@
+extends base
+
+block content
+    .container.product-info
+      .row.mt-5
+        .col.s12
+          a.btn.green.btn-large(href="/addProduct") Add New Product
+      .row
+        each product in products
+          .col.s12.m6.l4
+            .card
+              .card-image
+                img(src=`imgs/${product.photo}`, alt=`${product.name}`)
+              .card-content
+                h4.card-title #{product.name.charAt(0).toUpperCase() + product.name.slice(1)}
+                p.card-text
+                  | Price: #{product.price} EGP
+                  br
+                  | Quantity: #{product.quantity} Kg
+              .card-action
+                a.btn.green.btn-small(href=`/updateProduct/${product._id}`) Update
+                button.btn.red.btn-small(type='button' data-product-id=product._id) Remove

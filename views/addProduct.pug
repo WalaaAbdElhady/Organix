@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet", href="css/materialize.min.css")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+    link(rel="stylesheet", href="css/all.min.css")
+    link(rel="stylesheet", href="css/style.css")
+    link(rel="icon", type="image/x-icon", href="imgs/logo.png")
+    title Organix
+
+  body(style="background-color: #e1dede;")
+    .container.forms
+      form#add-form.p-4
+        .col-12.text-left
+          a.goBack(href="/my-products" onclick="goBack")
+            i.fas.fa-chevron-left
+
+        .form-row
+          .input-field.col.s12.mt-3
+            input#name.validate(type="text")
+            label(for="name") Name
+            
+          .input-field.col.s12.mt-3
+            input#price.validate(type="text")
+            label(for="price") Price
+
+          .input-field.col.s12.mt-3
+            input#quantity.validate(type="number")
+            label(for="quantity") Quantity
+
+          .file-field.input-field.col.s12.mt-3
+            .btn(style="background-color: #3c7d5a;")
+              span Upload image
+              input#photo(type="file" accept="image/*")
+            .file-path-wrapper
+              input.file-path.validate(type="text")
+
+          button.btn.btn-add(type="submit" class="mt-5" data-user-id=user._id) Add
+
+    script(src="/js/all.min.js")
+    script(src="/js/materialize.min.js")
+    script(src="/js/bundle.js")

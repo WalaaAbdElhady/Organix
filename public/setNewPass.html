@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    <link rel="icon" type="image/x-icon" href="imgs/logo.png">
+    <link rel="stylesheet" href="css/all.min .css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Organix</title>
+    <style>
+        * {
+            font-family: "Inter";
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+    </style>
+</head>
+
+<body class="setNewPass-page">
+    <div class="container mt-3 setNewPass">
+        <div class="row justify-content-center align-items-center" style="height: 100%;">
+            <div class="col s12 m6 d-flex justify-content-center img-container" style="height: 80%;">
+                <img src="imgs/login.png" alt="Image" class="responsive-img">
+            </div>
+            <div class="col s12 m6 l4 d-flex justify-content-center align-items-center text-center form-container">
+                <div>
+                    <form id="setNewPass-form">
+                        <h1 class="font-weight-bold">Set New Password</h1>
+                        <div class="inputField">
+                            <div class="input-field">
+                                <i class="fas fa-lock prefix"></i>
+                                <input type="password" id="password" class="validate" placeholder="Password" required>
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-lock prefix"></i>
+                                <input type="password" id="confirmpassword" class="validate" placeholder="Confirm password" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-reset">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/materialize.min.js"></script>
+    <script src="js/all.min.js"></script>
+</body>
+
+</html>

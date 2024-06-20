@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    block head
+      meta(charset="UTF-8")
+      meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+      link(rel="icon" type="/image/x-icon" href="/imgs/logo.png")
+      link(rel="stylesheet" href="/css/materialize.min.css")
+      link(rel="stylesheet" href="/css/style.css")
+      link(rel="stylesheet" href="/css/all.min.css")
+      link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+      title Add To Cart
+
+  body(style="background-color: #e1dede;")
+    div.container.addcart
+      .col-12.text-left
+          a.goBack(href="/shop")
+            i.fas.fa-chevron-left
+      div.section.details
+        div.row
+          div.col.s12.m7
+            img#productImage.responsive-img(src=`/imgs/${product.photo}`, alt="Product Image")
+          div.col.s12.m5.deta
+            h2#productName.productName= product.name
+            p#productQuantity.productQuantity Quantity: #{product.quantity} kg
+            p#productPrice.productPrice Price: #{product.price} EGP
+            a.btn.btn-addToCart(href='#') Add to Cart
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script(src="/js/all.min.js")
+    script(src="/js/materialize.min.js")
+    script(src="/js/bundle.js")
+    

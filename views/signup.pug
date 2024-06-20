@@ -1,0 +1,61 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="icon", type="image/x-icon", href="imgs/logo.png")
+    link(rel="stylesheet", href="css/materialize.min.css")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+    link(rel="stylesheet", href="css/all.min.css")
+    link(rel="stylesheet", href="css/style.css")
+    title Organix
+    style.
+      * {
+        font-family: "Inter";
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+      }
+  body.signup-page
+    .container.register
+        .row
+            .col.s12.m6.d-flex.justify-content-center.align-items-center.img-container
+                img.responsive-img(src="imgs/login.png", alt="Login Image")
+            .col.s12.m6.d-flex.justify-content-center.align-items-center.form-container
+                div
+                    form#Sign-up-form
+                        h1.font-weight-bold Sign up
+                        .inputField
+                            .input-field
+                              i.fas.fa-user.prefix
+                              input(type="text", id="username", class="validate", placeholder="User name", required)
+                            .input-field
+                              i.fas.fa-envelope.prefix
+                              input(type="email", id="email", class="validate", placeholder="Email address", required)
+                            .input-field
+                              i.fas.fa-lock.prefix
+                              input(type="password", id="password", class="validate", placeholder="Password", required)
+                            .input-field
+                              i.fas.fa-lock.prefix
+                              input(type="password", id="confirmpassword", class="validate", placeholder="Confirm password", required)
+                        .center-align
+                            button.btn.btn-signup(type="submit") Sign up
+                        .form-check
+                            label
+                            input(type="checkbox", id="agreeTerms")
+                            span I agree to the terms of services and privacy policy
+                        p.switch-form
+                            | Already have an account!
+                            a(href="/login", id="switch-to-login") Login
+    script(src="/js/materialize.min.js")
+    script(src="/js/all.min.js")
+    script(src="/js/bundle.js")

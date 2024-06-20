@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    block head
+      meta(charset="UTF-8")
+      meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+      link(rel="icon" type="/image/x-icon" href="/imgs/logo.png")
+      link(rel="stylesheet" href="/css/materialize.min.css")
+      link(rel="stylesheet" href="/css/style.css")
+      link(rel="stylesheet" href="/css/all.min.css")
+      link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+      title Update Product
+
+  body(style="background-color: #e1dede;")
+    .container.forms
+      form#update-form.p-4
+        .col-12.text-left
+          a.goBack(href="/my-products")
+            i.fas.fa-chevron-left
+        .form-row
+          .input-field.col.s12.mt-3
+            input#name.validate(type="text" value=updatedProduct.name, required)
+            label(for="name") Name
+          .input-field.col.s12.mt-3
+            input#price.validate(type="text" value=updatedProduct.price, required)
+            label(for="price") Price
+          .input-field.col.s12.mt-3
+            input#quantity.validate(type="number" value=updatedProduct.quantity, required)
+            label(for="quantity") Quantity
+          .file-field.input-field.col.s12.mt-3
+            .btn
+              span Upload image
+              input#photo(type="file")
+            .file-path-wrapper
+              input.file-path.validate(type="text")
+          input(type='hidden', id='productId', name='productId', value=updatedProduct._id)
+          button.btn.btn-update.mt-5(type="submit") Update
+
+    script(src="/js/all.min.js")
+    script(src="/js/materialize.min.js")
+    script(src="/js/bundle.js")
+    
+    

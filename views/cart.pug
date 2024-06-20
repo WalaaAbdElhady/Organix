@@ -1,0 +1,32 @@
+extends base
+
+block content
+  main
+    .container
+      .row
+        .col.s12.m6
+          h3 Your Cart
+        .col.s12.m6.right-align
+          h3#total Total: #{totalPrice} EGP
+      .row
+        if myCart.length > 0
+          each cartItem in myCart
+            each product in cartItem.products
+              .col.s12
+                .cart.horizontal
+                  .cart-image.col.s4
+                    img(src=`imgs/${product.product.photo}`, alt=product.product.name, style="width: 250px;")
+                    h4 #{product.product.name}
+                    p.price Price: #{product.product.price} EGP
+                  .card-stacked.col
+                    .card-action.col
+                      .input-field.inline.col.s12
+                        button.btn-floating.waves-effect.waves-light.green(type="button")
+                          i.material-icons add
+                        input#quantity.text-left.col.validate(type="text", value=`${product.quantity}`)
+                        button.btn-floating.waves-effect.waves-light.red(type="button")
+                          i.material-icons remove
+                      button.btn.green.book-cart(type='button') Book
+                      button.btn.red.remove-cart(type='button' data-product-id=product.product._id) Remove
+        else
+          p Your cart is empty

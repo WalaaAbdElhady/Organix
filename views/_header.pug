@@ -1,0 +1,50 @@
+body.home-page
+  nav.navbar-fixed
+    .nav-wrapper.white
+      a.brand-logo(href="/")
+        img(src="/imgs/logo.png" alt="Logo")
+        span Organix
+      a.sidenav-trigger(href="#" data-target="mobile-demo")
+        i.material-icons.black-text menu
+      ul#nav-mobile.col.right.hide-on-med-and-down
+        li
+          a#homeLink(href="/") Home
+        li
+          a#shopLink(href="/shop") Shop
+        if user
+          if user.role=='user'
+            li
+              a#cartLink(href="/cart") Cart
+          else if user.role=='farmer'
+            li
+              a#cartLink(href="/my-products") Products
+          li
+            a#profileLink(href="/profile")
+              i.fas.fa-user.prefix
+          li
+            a#logoutLink(href="#") Logout
+        else
+            li
+              a#loginLink(href="/login") Login
+          
+  ul.sidenav#mobile-demo
+    li
+      a#homeLink(href="/") Home
+    li
+      a#shopLink(href="/shop") Shop
+    if user
+      if user.role=='user'
+        li
+          a#cartLink(href="/cart") Cart
+      else if user.role=='farmer'
+        li
+          a#cartLink(href="/my-products") Products
+      li
+        a#profileLink(href="/profile") Profile
+      li
+        a#logoutLink(href="#") Logout
+    else
+        li
+          a#loginLink(href="/login") Login
+
+

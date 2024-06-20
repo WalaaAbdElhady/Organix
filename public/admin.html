@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/all.min .css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="imgs/logo.png">
+  <title>Organix</title>
+
+</head>
+
+<body>
+  <div class="container-fluid admin">
+    <div class="row">
+      <nav class="col s12 m4 l3 sidebar">
+        <div class="admin-info">
+          <img src="imgs/admin.jpg" alt="adminPhoto" id="admin-photo" class="responsive-img circle">
+          <h1>Wafaa</h1>
+        </div>
+        <div class="links">
+          <a href="admin.html" class="valign-wrapper"><i class="material-icons">home</i> Home</a>
+          <a href="products.html" class="valign-wrapper"><img src="imgs/product.png" alt=""> Products</a>
+          <a href="addProduct.html" class="valign-wrapper"><i class="material-icons">add</i> Add New Product</a>
+          <a id="logout" class="valign-wrapper"><i class="material-icons">arrow_right</i> Logout</a>
+        </div>
+      </nav>
+
+      <main class="col s12 m8 l9 main">
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="bars">
+              <div class="info">
+                <h1>Sales</h1>
+                <p>Total sales today</p>
+                <h5>$1000</h5>
+              </div>
+              <div class="progress-circle-wrapper">
+                <svg viewBox="0 0 100 100" class="progress-circle">
+                  <circle cx="50" cy="50" r="45" class="circle-bg"></circle>
+                  <circle cx="50" cy="50" r="45" class="circle-fill"
+                    style="stroke-dasharray: 282.743; stroke-dashoffset: 98.96;"></circle>
+                  <text x="50" y="50">65%</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="bars">
+              <div class="info">
+                <h1>Orders</h1>
+                <p>Total orders today</p>
+                <h5>3000</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="bars">
+              <div class="info">
+                <h1>Revenue</h1>
+                <p>Total revenue today</p>
+                <h5>$600</h5>
+              </div>
+              <div class="progress-circle-wrapper">
+                <svg viewBox="0 0 100 100" class="progress-circle">
+                  <circle cx="50" cy="50" r="45" class="circle-bg"></circle>
+                  <circle cx="50" cy="50" r="45" class="circle-revenue-fill"
+                    style="stroke-dasharray: 282.743; stroke-dashoffset: 146.98;"></circle>
+                  <text x="50" y="50">48%</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="bars">
+              <div class="info">
+                <h1>Visits</h1>
+                <p>Total visits today</p>
+                <h5>500</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/materialize.min.js"></script>
+</body>
+
+</html>

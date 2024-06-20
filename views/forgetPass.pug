@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet", href="css/materialize.min.css")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+    link(rel="icon", type="image/x-icon", href="imgs/logo.png")
+    link(rel="stylesheet", href="css/all.min.css")
+    link(rel="stylesheet", href="css/style.css")
+    title Organix
+    style.
+      * {
+        font-family: "Inter";
+        padding: 0;
+        margin: 0;
+      }
+      html, body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+      }
+
+  body.forgetPass-page
+    .container.mt-3.forgetPass
+      .row.justify-content-center.align-items-center(style="height: 100%;")
+        .col.s12.m6.d-flex.justify-content-center.img-container(style="height: 80%;")
+          img.responsive-img(src="imgs/login.png" alt="Image")
+        .col.s12.m6.l4.d-flex.justify-content-center.align-items-center.text-center.form-container
+          div
+            form#forgetPass-form
+              h1.font-weight-bold Forget password
+              p.
+                Don't worry enter your registered email id to receive password reset link
+              .inputField
+                .input-field
+                  i.fas.fa-envelope.prefix
+                  input(type="email", id="email", class="validate", placeholder="Email address", required)
+              button.btn.btn-send(type="submit") send
+              p.switch-form
+                | Remember password? 
+                a#switch-to-login(href="/login") Login
+
+  script(src="js/materialize.min.js")
+  script(src="js/all.min.js")
+  script(src="js/bundle.js")

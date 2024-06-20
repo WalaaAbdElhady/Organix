@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    block head
+      meta(charset="UTF-8")
+      meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+      link(rel="icon" type="/image/x-icon" href="/imgs/logo.png")
+      link(rel="stylesheet" href="/css/materialize.min.css")
+      link(rel="stylesheet" href="/css/style.css")
+      link(rel="stylesheet" href="/css/all.min.css")
+      link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+      link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap")
+      title Organix | #{title}
+
+  body
+    // HEADER
+    include _header
+        
+    // CONTENT
+    block content
+    
+      
+    // FOOTER
+    include _footer
+    script(src="/js/all.min.js")
+    script(src="/js/materialize.min.js")
+    script(src="/js/bundle.js")
+    script.
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+      });
