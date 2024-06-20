@@ -6,7 +6,7 @@ export const forgetPass = async email => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://localhost:3000/api/v1/users/forgotPassword',
+      url: '/api/v1/users/forgotPassword',
       data: {
         email
       }
@@ -27,7 +27,7 @@ export const setNewPass = async (password, passwordConfirm, code) => {
   try {
     const res = await axios({
       method: 'PATCH',
-      url: `http://localhost:3000/api/v1/users/resetPassword/${code}`,
+      url: `/api/v1/users/resetPassword/${code}`,
       data: {
         password,
         passwordConfirm
@@ -53,7 +53,7 @@ export const updatePass = async (
   try {
     const res = await axios({
       method: 'PATCH',
-      url: 'http://localhost:3000/api/v1/users/updateMyPassword',
+      url: '/api/v1/users/updateMyPassword',
       data: {
         passwordCurrent,
         password,
@@ -76,7 +76,7 @@ export const updateProfile = async data => {
   try {
     const res = await axios({
       method: 'PATCH',
-      url: 'http://localhost:3000/api/v1/users/updateMe',
+      url: '/api/v1/users/updateMe',
       data
     });
 

@@ -6,7 +6,7 @@ export const addToCart = async product => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://localhost:3000/api/v1/carts/add-to-cart',
+      url: '/api/v1/carts/add-to-cart',
       data: {
         product
       }
@@ -28,7 +28,7 @@ export const removeFromCart = async product => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://localhost:3000/api/v1/carts/remove-from-cart',
+      url: '/api/v1/carts/remove-from-cart',
       data: {
         product
       }

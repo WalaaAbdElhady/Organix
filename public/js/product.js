@@ -8,7 +8,7 @@ export const updateProduct = async (id, data) => {
   try {
     const res = await axios({
       method: 'Patch',
-      url: `http://localhost:3000/api/v1/products/${id}`,
+      url: `/api/v1/products/${id}`,
       data
     });
 
@@ -28,7 +28,7 @@ export const addProduct = async data => {
   try {
     const res = await axios({
       method: 'POST',
-      url: `http://localhost:3000/api/v1/products`,
+      url: `/api/v1/products`,
       data
     });
     if (res.status === 201) {
@@ -47,7 +47,7 @@ export const deleteProduct = async id => {
   try {
     const res = await axios({
       method: 'DELETE',
-      url: `http://localhost:3000/api/v1/products/${id}`
+      url: `/api/v1/products/${id}`
     });
     if (res.status === 204) {
       showAlert('success', 'Product deleted  successfully!');
