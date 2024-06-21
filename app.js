@@ -13,11 +13,14 @@ const cartRouter = require('./routes/cartRoutes');
 const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
-app.use(cors());
+app.enable('trust proxy');
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(cors());
+
+app.options('*', cors());
 // Body parser, reading data from body into req.body
 app.use(express.json());
 
@@ -33,6 +36,8 @@ app.use((req, res, next) => {
 });
 // Serving static files
 app.use(express.static(`${__dirname}/public`));
+
+app.use(compression());
 
 app.use('/', viewRouter);
 app.use('/api/v1/users', userRouter);
