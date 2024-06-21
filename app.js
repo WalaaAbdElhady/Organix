@@ -34,6 +34,13 @@ app.use((req, res, next) => {
   //console.log('Cookies:', req.cookies);
   next();
 });
+
+// Log cookies for debugging
+app.use((req, res, next) => {
+  console.log('Cookies:', req.cookies);
+  next();
+});
+
 // Serving static files
 app.use(express.static(`${__dirname}/public`));
 
