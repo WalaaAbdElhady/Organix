@@ -46,16 +46,6 @@ app.use(express.static(`${__dirname}/public`));
 
 app.use(compression());
 
-app.use((req, res, next) => {
-  if (
-    req.headers['x-forwarded-proto'] !== 'https' &&
-    process.env.NODE_ENV === 'production'
-  ) {
-    return res.redirect(`https://${req.headers.host}${req.url}`);
-  }
-  next();
-});
-
 app.use('/', viewRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
