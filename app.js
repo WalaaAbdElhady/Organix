@@ -20,6 +20,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(cors());
 
+app.use(
+  cors({
+    origin: 'https://smart-farm-dssv.onrender.com',
+    credentials: true
+  })
+);
+
 app.options('*', cors());
 // Body parser, reading data from body into req.body
 app.use(express.json());
