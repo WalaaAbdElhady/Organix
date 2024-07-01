@@ -75,7 +75,7 @@ html(lang="en")
                 .user-image
                   #imageContainer
                     img(src=`imgs/${user.photo}` alt="Profile Image")
-                button.btn-upload.btn.waves-effect.waves-light
+                button.btn-upload.btn.waves-effect.waves-light( onclick="editprofile()")
                   |  Update image
               .row.mb-3
                 label.col.s4(for="name") Name:
