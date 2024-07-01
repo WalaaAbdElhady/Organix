@@ -8,6 +8,7 @@ html
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
     link(rel="stylesheet", href="css/all.min.css")
     link(rel="stylesheet", href="css/style.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
     title Organix
     style.
       * {
@@ -47,6 +48,10 @@ html
                             .input-field
                               i.fas.fa-lock.prefix
                               input(type="password", id="confirmpassword", class="validate", placeholder="Confirm password", required)
+                            .input-field
+                              i.fas.fa-user-cog.prefix
+                              input(type="text", id="role", class="validate", placeholder="user or farmer", required)
+                              //- span#role-error.red-text(style="display: none;") Invalid role. Please enter "farmer" or "user".
                         .center-align
                             button.btn.btn-signup(type="submit") Sign up
                         .form-check

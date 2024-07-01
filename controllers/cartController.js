@@ -129,14 +129,25 @@ exports.updateCart = catchAsync(async (req, res, next) => {
   if (!cart) {
     return next(new AppError('No cart found with that ID', 404));
   }
-  const doc = await Cart.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true
-  });
+
+  const { productId, quantity } = req.body;
+
+  // Find the product in the cart and update its quantity
+  const productToUpdate = cart.products.find(
+    product => product.product.toString() === productId
+  );
+  if (productToUpdate) {
+    productToUpdate.quantity = quantity;
+  } else {
+    return next(new AppError('Product not found in cart', 404));
+  }
+
+  await cart.save();
+
   res.status(200).json({
     status: 'success',
     data: {
-      doc
+      cart
     }
   });
 });

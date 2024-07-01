@@ -12,7 +12,7 @@ block content
               .card-image
                 img(src=`imgs/${product.photo}`, alt=`${product.name}`)
               .card-content
-                h4.card-title #{product.name.charAt(0).toUpperCase() + product.name.slice(1)}
+                h4.card-title(style="font-weight: bold; color: #3c7d5a;") #{product.name.charAt(0).toUpperCase() + product.name.slice(1)}
                 p.card-text
                   | Price: #{product.price} EGP
                   br

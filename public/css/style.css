@@ -343,13 +343,35 @@ body {
   color: #6c8b7a;
   text-decoration: underline;
 }
+/* Define CSS variables for better maintainability */
+:root {
+  --link-color: #3c7d5a; /* Default link color */
+  --link-hover-shadow: 2px 2px 4px rgba(60, 125, 90, 0.7); /* Shadow on hover */
+  --link-active-shadow: 2px 2px 4px rgba(60, 125, 90, 1); /* Stronger shadow on click */
+  --link-active-color: #3c7d5a; /* Active link color */
+}
 
-.home-page #homeLink,
-.shop-page #shopLink,
-.cart-page #cartLink,
-.provile-page #provileLink {
-  color: green !important;
-  text-decoration: underline;
+/* Apply styles to all links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Apply shadow on hover */
+a:hover {
+  text-shadow: var(--link-hover-shadow);
+}
+
+/* Apply stronger shadow when clicked */
+a:active {
+  text-shadow: var(--link-active-shadow);
+}
+
+/* Apply shadow and green color to active links */
+.active-link {
+  color: var(--link-active-color);
+  text-shadow: var(--link-hover-shadow);
 }
 
 .home-page {
@@ -1246,4 +1268,10 @@ body {
 }
 .alert--error {
   background-color: #eb4d4b;
+}
+
+footer {
+  background-color: #fff;
+  margin-top: 20px;
+  padding-top: 15px;
 }

@@ -29,8 +29,6 @@ router.get(
   cartController.getCart
 );
 
-router.use(authController.restrictTo('admin'));
-
 router
   .route('/')
   .get(cartController.getAllcarts)

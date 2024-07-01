@@ -1,50 +1,48 @@
-body.home-page
-  nav.navbar-fixed
-    .nav-wrapper.white
-      a.brand-logo(href="/")
-        img(src="/imgs/logo.png" alt="Logo")
-        span Organix
-      a.sidenav-trigger(href="#" data-target="mobile-demo")
-        i.material-icons.black-text menu
-      ul#nav-mobile.col.right.hide-on-med-and-down
-        li
-          a#homeLink(href="/") Home
-        li
-          a#shopLink(href="/shop") Shop
-        if user
-          if user.role=='user'
-            li
-              a#cartLink(href="/cart") Cart
-          else if user.role=='farmer'
-            li
-              a#cartLink(href="/my-products") Products
-          li
-            a#profileLink(href="/profile")
-              i.fas.fa-user.prefix
-          li
-            a#logoutLink(href="#") Logout
-        else
-            li
-              a#loginLink(href="/login") Login
-          
-  ul.sidenav#mobile-demo
-    li
-      a#homeLink(href="/") Home
-    li
-      a#shopLink(href="/shop") Shop
-    if user
-      if user.role=='user'
-        li
-          a#cartLink(href="/cart") Cart
-      else if user.role=='farmer'
-        li
-          a#cartLink(href="/my-products") Products
+// In your header pug
+nav.navbar-fixed
+  .nav-wrapper.white
+    a.brand-logo(href="/")
+      img(src="/imgs/logo.png" alt="Logo")
+      span Organix
+    a.sidenav-trigger(href="#" data-target="mobile-demo")
+      i.material-icons.black-text menu
+    ul#nav-mobile.col.right.hide-on-med-and-down
       li
-        a#profileLink(href="/profile") Profile
+        a#homeLink(class=pageClass == 'home-page' ? 'active-link' : '' href="/") Home
       li
-        a#logoutLink(href="#") Logout
-    else
+        a#shopLink(class=pageClass == 'shop-page' ? 'active-link' : '' href="/shop") Shop
+      if user
+        if user.role == 'user'
+          li
+            a#cartLink(class=pageClass == 'cart-page' ? 'active-link' : '' href="/cart") Cart
+        else if user.role == 'farmer'
+          li
+            a#productsLink(class=pageClass == 'products-page' ? 'active-link' : '' href="/my-products") Products
+        li
+          a#profileLink(class=pageClass == 'profile-page' ? 'active-link' : '' href="/profile")
+            i.fas.fa-user.prefix
+        li
+          a#logoutLink(href="#") Logout
+      else
         li
           a#loginLink(href="/login") Login
 
-
+ul.sidenav#mobile-demo
+  li
+    a#homeLink(class=pageClass == 'home-page' ? 'active-link' : '' href="/") Home
+  li
+    a#shopLink(class=pageClass == 'shop-page' ? 'active-link' : '' href="/shop") Shop
+  if user
+    if user.role == 'user'
+      li
+        a#cartLink(class=pageClass == 'cart-page' ? 'active-link' : '' href="/cart") Cart
+    else if user.role == 'farmer'
+      li
+        a#productsLink(class=pageClass == 'products-page' ? 'active-link' : '' href="/my-products") Products
+    li
+      a#profileLink(class=pageClass == 'profile-page' ? 'active-link' : '' href="/profile") Profile
+    li
+      a#logoutLink(href="#") Logout
+  else
+    li
+      a#loginLink(href="/login") Login

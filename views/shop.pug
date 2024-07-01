@@ -14,7 +14,7 @@ block content
                                     a(href=`/addCart/${product._id}`)
                                         img.responsive-img(src=`imgs/${product.photo}`, alt=`${product.name}`)
                                 .card-content
-                                    span.card-title= product.name
+                                    span.card-title(style="font-weight: bold; color: #3c7d5a;")= product.name
                                     p
                                     | Quantity: #{product.quantity} Kg <br />
                                     | Price: #{product.price} EGP
@@ -23,7 +23,7 @@ block content
                                 a(href='#')
                                     img.responsive-img(src=`imgs/${product.photo}`, alt=`${product.name}`)
                                 .card-content
-                                    span.card-title= product.name
+                                    span.card-title(style="font-weight: bold; color: #3c7d5a;")= product.name
                                     p
                                     | Quantity: #{product.quantity} Kg <br />
                                     | Price: #{product.price} EGP
@@ -32,7 +32,7 @@ block content
                                 a(href='#')
                                     img.responsive-img(src=`imgs/${product.photo}`, alt=`${product.name}`)
                             .card-content
-                                span.card-title= product.name
+                                span.card-title(style="font-weight: bold; color: #3c7d5a;")= product.name
                                 p
                                 | Quantity: #{product.quantity} Kg <br />
                                 | Price: #{product.price} EGP

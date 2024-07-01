@@ -5,13 +5,16 @@ const Cart = require('./../models/cartModel');
 //const AppError = require('./../utils/appError');
 
 exports.getHome = catchAsync(async (req, res, next) => {
-  res.status(200).render('home');
+  res.status(200).render('home', {
+    pageClass: 'home-page'
+  });
 });
 
 exports.getShop = catchAsync(async (req, res, next) => {
   const products = await Product.find();
   res.status(200).render('shop', {
     title: 'Shop',
+    pageClass: 'shop-page',
     products
   });
 });
@@ -48,7 +51,8 @@ exports.getSetNewPass = async (req, res, next) => {
 
 exports.getAccount = async (req, res, next) => {
   res.status(200).render('profile', {
-    title: 'My Profile'
+    title: 'My Profile',
+    pageClass: 'profile-page'
   });
 };
 
@@ -61,6 +65,7 @@ exports.getProducts = async (req, res, next) => {
   const products = await Product.find({ farmer: res.locals.user.id });
   res.status(200).render('products', {
     title: 'My Products',
+    pageClass: 'products-page',
     products
   });
 };
@@ -80,6 +85,7 @@ exports.getCart = catchAsync(async (req, res, next) => {
   //console.log(total);
   res.status(200).render('cart', {
     title: 'My Cart',
+    pageClass: 'cart-page',
     myCart,
     totalPrice
   });

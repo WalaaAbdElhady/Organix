@@ -2,8 +2,14 @@
 import axios from 'axios';
 import { showAlert } from './alerts';
 
-const signup = async (name, email, password, passwordConfirm) => {
+const signup = async (name, email, password, passwordConfirm, role) => {
   try {
+    const validRoles = ['user', 'farmer'];
+    if (!validRoles.includes(role.toLowerCase())) {
+      showAlert('error', 'Invalid role. Please enter "farmer" or "user".');
+      return;
+    }
+
     const res = await axios({
       method: 'POST',
       url: '/api/v1/users/signup',
@@ -11,7 +17,8 @@ const signup = async (name, email, password, passwordConfirm) => {
         name,
         email,
         password,
-        passwordConfirm
+        passwordConfirm,
+        role
       },
       withCredentials: true
     });
