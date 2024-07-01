@@ -4,6 +4,7 @@ import { showAlert } from './alerts';
 
 const signup = async (name, email, password, passwordConfirm, role) => {
   try {
+    role = role.toLowerCase();
     const validRoles = ['user', 'farmer'];
     if (!validRoles.includes(role.toLowerCase())) {
       showAlert('error', 'Invalid role. Please enter "farmer" or "user".');
